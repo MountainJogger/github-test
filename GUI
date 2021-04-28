@@ -1,0 +1,211 @@
+/*
+ * @author
+ * Jimmy Yang
+ * CSCI 1082
+ * Lisa M.
+ */
+
+
+
+
+/* 
+* import Java Utilities
+ */
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
+import javax.swing.JLabel;
+
+/*
+ * Constructor for Vaccine signup
+ */
+public class VaccineSignUpGUI extends JFrame {
+
+	/*
+	 * @param
+	 * lists the objects for the labels
+	 */
+	private JLabel fName;
+	private JLabel lName;
+	private JLabel bDay;
+	private JLabel phone;
+	private JLabel email;
+	private JLabel address1;
+	private JLabel address2;
+	private JLabel city;
+	private JLabel state;
+	private JLabel zipCode;
+	
+	/*
+	 * @param
+	 * lists the objects for the text boxes
+	 */
+	private JTextField fnTbox = new JTextField();
+	private JTextField lnTbox = new JTextField();
+	private JTextField bdTbox = new JTextField();
+	private JTextField phTbox = new JTextField();
+	private JTextField emTbox = new JTextField();
+	private JTextField ad1Tbox = new JTextField();
+	private JTextField ad2Tbox = new JTextField();
+	private JTextField cTbox = new JTextField();
+	private JTextField sTbox = new JTextField();
+	private JTextField zcTbox = new JTextField();
+    
+	/*
+	 * @param
+	 * lists the objects for the checkboxes
+	 */
+    private JCheckBox healthCareCB;
+    private JCheckBox LongTermCB;
+    private JCheckBox AgeCB;
+    private JCheckBox preK12CB; 
+    private JCheckBox SUCcb;
+    private JCheckBox TEWcb;
+    private JCheckBox rareConCB;
+    private JCheckBox age45to64cb;
+    private JCheckBox  age16to44;
+    private JCheckBox  EFWcb;
+    private JCheckBox age50plusWconcb; 
+    private JCheckBox  age16plusWcon;
+    private JCheckBox age50plus;
+    
+    /*
+     * @param
+     * creation of signup button
+     */
+    private JButton SignUpButton;
+    TitledBorder titledBorder1, titledBorder2;
+    public VaccineSignUpGUI()
+    {
+    	/*
+    	 * Defines the variables for labels
+    	 */
+        fName = new JLabel("First Name:");
+        lName = new JLabel("Last Name:");
+        bDay = new JLabel("Birth Date:");
+        phone = new JLabel("Phone #:");
+        email = new JLabel("email:");
+        address1 = new JLabel("Address Line 1:");
+        address2 = new JLabel("Address Line 2:");
+        city = new JLabel("City:");
+        state = new JLabel("State:");
+        zipCode = new JLabel("Zip:");
+    	
+        /*
+         * declares the names for the text boxes 
+         */
+        fnTbox = new JTextField(20);
+        lnTbox = new JTextField();
+        bdTbox = new JTextField();
+        phTbox = new JTextField();
+        emTbox = new JTextField();
+        ad1Tbox = new JTextField();
+        ad2Tbox = new JTextField();
+        cTbox = new JTextField();
+        sTbox = new JTextField();
+        zcTbox = new JTextField();
+
+        /*
+         * declares the names for the check boxes
+         */
+        healthCareCB = new JCheckBox("Health Care Personal");
+        LongTermCB = new JCheckBox("Long term care resident");
+        AgeCB = new JCheckBox("age 65 or older");
+        preK12CB = new JCheckBox("Pre-k to 12 educators");
+        SUCcb = new JCheckBox("Specific underlying conditions");
+        TEWcb = new JCheckBox("Targeted essential workers");
+        rareConCB = new JCheckBox("Rare Conditions");
+        age45to64cb = new JCheckBox("Age 45-64 with underlying conditions");
+        age16to44 = new JCheckBox("Age 16-44 with 2+ underlying conditions");
+        EFWcb = new JCheckBox("Essential frontline workers");
+        age50plusWconcb = new JCheckBox("age 50+ in multi-generational housing");
+        age16plusWcon = new JCheckBox("Age 16+ with underlying conditions");
+        age50plus = new JCheckBox("Age 50 or older");
+
+        //declares the name for the button, adds text to button
+        SignUpButton = new JButton("Sign Me Up!");
+
+        /*
+         * @param
+         * creation of title borders
+         */
+        titledBorder1 = BorderFactory.createTitledBorder("Personal Info");
+        titledBorder2 = BorderFactory.createTitledBorder("Conditions");
+        GridLayout gridLayout = new GridLayout(10,2);
+        gridLayout.setVgap(10);
+        gridLayout.setHgap(10);
+        
+        /*
+         * crate left panel for textboxes and the labels
+         */
+        JPanel leftPanel = new JPanel(gridLayout);
+        leftPanel.setBorder(titledBorder1);
+        leftPanel.add(fName);
+        leftPanel.add(fnTbox);
+        leftPanel.add(lName);
+        leftPanel.add(lnTbox);
+        leftPanel.add(bDay);
+        leftPanel.add(bdTbox);
+        leftPanel.add(phone);
+        leftPanel.add(phTbox);
+        leftPanel.add(email);
+        leftPanel.add(emTbox);
+        leftPanel.add(address1);
+        leftPanel.add(ad1Tbox);
+        leftPanel.add(address2);
+        leftPanel.add(ad2Tbox);
+        leftPanel.add(city);
+        leftPanel.add(cTbox);
+        leftPanel.add(state);
+        leftPanel.add(sTbox);
+        leftPanel.add(zipCode);
+        leftPanel.add(zcTbox);
+
+        /*
+         * creates right side panel for checkboxes and labels
+         */
+        JPanel rightPanel = new JPanel(new GridLayout(15,1));
+        rightPanel.setBorder(titledBorder2);
+        rightPanel.add(new JLabel("Choose all that apply to you:"));
+        rightPanel.add(healthCareCB);
+        rightPanel.add(LongTermCB);
+        rightPanel.add(AgeCB);
+        rightPanel.add(preK12CB);
+        rightPanel.add(SUCcb);
+        rightPanel.add(TEWcb);
+        rightPanel.add(rareConCB);
+        rightPanel.add(age45to64cb);
+        rightPanel.add(age16to44);
+        rightPanel.add(EFWcb);
+        rightPanel.add(age50plusWconcb);
+        rightPanel.add(age16plusWcon);
+        rightPanel.add(age50plus);
+
+        /*
+         * @param
+         * added the title and sets the size of the GUI
+         */
+        setTitle("Vaccine Signup");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(new Dimension(500,500));
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setLayout(new BorderLayout());
+        add(leftPanel,BorderLayout.WEST);
+        add(rightPanel,BorderLayout.EAST);
+        add(SignUpButton,BorderLayout.SOUTH);
+    }
+    
+    public static void main(String[] args)
+    {
+                new VaccineSignUpGUI();
+    }
+}
